@@ -16,7 +16,7 @@
         "migration:run": "ts-node node_modules/.bin/typeorm migration:run",
         "start:dev": "nest start --watch",
         "start:debug": "nest start --debug 0.0.0.0:9229 --watch",
-        "start": "nest start -p ./tsconfig.json src/main.ts",
+        "start": "nest start",
         "prestart:prod": "npm run migration:run",
         "start:prod": "nest start",
         "test": "jest",

@@ -2,19 +2,19 @@ version: "3.4"
 
 services:
   postgresql:
-    container_name: database
+    container_name: kavok-database
     image: "postgres:11.3"
     environment:
       POSTGRES_USER: the
       POSTGRES_PASSWORD: cafe
-      POSTGRES_DB: theodercafe
+      POSTGRES_DB: kavok
       PG_DATA: /var/lib/postgresql/data
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
   backend:
-    container_name: backend
+    container_name: kavok-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -31,7 +31,7 @@ services:
       TYPEORM_HOST: postgresql
       TYPEORM_USERNAME: the
       TYPEORM_PASSWORD: cafe
-      TYPEORM_DATABASE: theodercafe
+      TYPEORM_DATABASE: kavok
       TYPEORM_PORT: "5432"
       TYPEORM_LOGGING: "true"
       TYPEORM_ENTITIES: dist/**/*.entity.js,dist/src/**/*.entity.js

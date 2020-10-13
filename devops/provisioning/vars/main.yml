@@ -1,6 +1,6 @@
 ---
 #PUT here your main variable
-project_name: theodercafe
+project_name: kavok
 apt_specific_packages:
   - git
 
